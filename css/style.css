@@ -21,13 +21,23 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #4070f4;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 /* navbar styling */
 nav{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 20px 0;
   z-index: 998;
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
+}
+.home {
+  margin-top: 100px;
 }
 nav.sticky{
   background: #4070f4;
@@ -43,7 +53,7 @@ nav .navbar{
 }
 nav .navbar .logo a{
   font-weight: 500;
-  font-size: 35px;
+  font-size: 50px;
   color: #4070f4;
 }
 nav.sticky .navbar .logo a{
@@ -58,7 +68,7 @@ nav .navbar .menu li{
   margin: 0 8px;
 }
 .navbar .menu a{
-  font-size: 18px;
+  font-size: 27px;
   font-weight: 500;
   color: #0E2431;
   padding: 6px 0;
@@ -75,7 +85,7 @@ nav.sticky .menu a:hover{
 }
 .navbar .media-icons a{
   color: #4070f4;
-  font-size: 18px;
+  font-size: 25px;
   margin: 0 6px;
 }
 nav.sticky .media-icons a{
@@ -113,8 +123,8 @@ nav.sticky .menu-btn{
   font-family: 'Ubuntu', sans-serif;
 }
 .home .home-content{
-  width: 80%;
-  height: 150%;
+  width: 90%;
+  height: 135%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -140,26 +150,81 @@ nav.sticky .menu-btn{
   margin: 5px 0;
   color: #0E2431;
 }
-.home .button{
-  margin: 14px 0;
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 100px 5%;
+  gap: 30px;
 }
-.home .button button{
-  outline: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+
+.home-text {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.home-image{
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img{
+  height: auto;
+  width: 100%;
+  max-width: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.home .text-one {
   font-size: 25px;
-  font-weight: 400;
+  color: #0E2431;
+}
+
+.home .text-two {
+  color: #0E2431;
+  font-size: 65px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.home .text-three {
+  font-size: 40px;
+  margin: 5px 0;
+  color: #4070f4;
+}
+
+.home .text-four {
+  font-size: 23px;
+  margin: 5px 0;
+  color: #0E2431;
+}
+
+.home .button {
+  margin-top: 20px;
+}
+
+.home .button button {
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 500;
   background: #4070f4;
   color: #fff;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
-.home .button button:hover{
+
+.home .button button:hover {
   border-color: #4070f4;
   background-color: #fff;
   color: #4070f4;
 }
+
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
  I'm Selecting Directly 'Section Tag' and 'Class'  */
@@ -494,5 +559,16 @@ footer .text span a:hover{
   .skills-details .boxes .per{
     font-size: 50px;
     color: #4070f4;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    width: 250px;
   }
 }
